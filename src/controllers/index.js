@@ -1,6 +1,8 @@
+"use strict"
+
 // declare controllers
 const uuidv1 = require('uuid/v1');
-const todos = require('../dummyData/dummy')
+let todos = require('../dummyData/dummy')
 
 class TodoController {
   // GET /todos - get all of the todos we have in the system
@@ -52,10 +54,10 @@ class TodoController {
 
   // PUT /todos/:id
   static updateTodo(req, res) {
-    const id = req.params.id;
+    const id = Number(req.params.id);
     const name = req.body.name;
     const completed = req.body.completed;
-    const todoToUpdate = todos.find(todo => todo.id === id);
+    const todoToUpdate = todos.find(todo => todo.id ===id);
     if (todoToUpdate) {
       const newTodos = todos.map(todo => {
         if (todo.id === id) {

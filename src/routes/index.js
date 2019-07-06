@@ -27,7 +27,7 @@ appRouter.put('/todos/:id', TodoController.updateTodo);
 appRouter.delete('/todos/:id', TodoController.deleteTodo);
 
 appRouter.use('*', (req, res) => {
-  return res.send('Route not found');
+  return res.status(404).send('Route not found');
 });
 
 module.exports= appRouter;
