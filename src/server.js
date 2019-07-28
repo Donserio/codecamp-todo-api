@@ -18,7 +18,7 @@ const app = express();
 // configure body-parser for express
 app.use(bodyParser.json({ extended: true }));
 
-// handles all the routing
+//  handles all the routing
 app.use(appRouter);
 
 const PORT = process.env.PORT || 4000;
